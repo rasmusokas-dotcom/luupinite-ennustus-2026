@@ -15,9 +15,10 @@ function HomePage() {
     error: matchesError
   } = useMatches()
 
+
   return (
     <div className="container">
-      <h1>MM Ennustusmäng</h1>
+      <h1>Luupinite ennustus 2026</h1>
 
       <div className="section">
         <h2>Edetabel</h2>
@@ -41,6 +42,7 @@ function HomePage() {
         {!matchesLoading && !matchesError && (
           <Matches matches={matches} />
         )}
+
       </div>
     </div>
   )
