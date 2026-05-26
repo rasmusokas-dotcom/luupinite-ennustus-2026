@@ -55,7 +55,7 @@ function Matches({ matches }) {
               {getTeamName(match.awayTeam)}
             </div>
 
-            <div className="match-status">
+            <div className={`match-status status-${match.status}`}>
               {getStatusLabel(match.status)}
             </div>
           </div>
@@ -63,7 +63,37 @@ function Matches({ matches }) {
           <div className="match-date">
             {formatDate(match.utcDate)}
           </div>
+          {match.predictionSummary && (
+            <div className="prediction-summary">
+              {match.predictionSummary.homeSupporters.length > 0 && (
+                <div>
+                  <strong>
+                    {getTeamName(match.homeTeam)}
+                  </strong>
+                  {" → "}
+                  {match.predictionSummary.homeSupporters.join(", ")}
+                </div>
+              )}
 
+              {match.predictionSummary.awaySupporters.length > 0 && (
+                <div>
+                  <strong>
+                    {getTeamName(match.awayTeam)}
+                  </strong>
+                  {" → "}
+                  {match.predictionSummary.awaySupporters.join(", ")}
+                </div>
+              )}
+
+              {match.predictionSummary.bothSupporters.length > 0 && (
+                <div>
+                  <strong>Mõlemad</strong>
+                  {" → "}
+                  {match.predictionSummary.bothSupporters.join(", ")}
+                </div>
+              )}
+            </div>
+          )}
           <div className="match-score">
             {match.homeScore ?? "-"} :{" "}
             {match.awayScore ?? "-"}

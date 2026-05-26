@@ -43,9 +43,9 @@ const testMatches = [
         stage: "QUARTER_FINALS",
         homeTeam: "BRA",
         awayTeam: "FRA",
-        homeScore: 2,
-        awayScore: 1,
-        status: "FINISHED"
+        homeScore: null,
+        awayScore: null,
+        status: "SCHEDULED"
     },
     {
         id: 900004,

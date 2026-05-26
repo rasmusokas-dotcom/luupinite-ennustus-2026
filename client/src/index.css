@@ -400,3 +400,54 @@ h3 {
 .match-prediction-pill strong {
   color: #172033;
 }
+
+.status-box {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  color: #64748b;
+}
+
+.error-box {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-left: 5px solid #dc2626;
+}
+
+.status-LIVE,
+.status-IN_PLAY,
+.status-PAUSED {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-FINISHED {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-SCHEDULED,
+.status-TIMED {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.prediction-summary {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #475569;
+}

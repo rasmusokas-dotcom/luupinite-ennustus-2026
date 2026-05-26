@@ -25,6 +25,9 @@ function App() {
           element={<UserPage />}
         />
       </Routes>
+      <footer className="footer">
+        Data powered by football-data.org
+      </footer>
     </>
   )
 }

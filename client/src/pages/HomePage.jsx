@@ -23,9 +23,17 @@ function HomePage() {
       <div className="section">
         <h2>Edetabel</h2>
 
-        {loading && <p>Laen edetabelit...</p>}
+        {loading && (
+          <div className="status-box">
+            Laen edetabelit...
+          </div>
+        )}
 
-        {error && <p>{error}</p>}
+        {error && (
+          <div className="status-box error-box">
+            {error}
+          </div>
+        )}
 
         {!loading && !error && (
           <Leaderboard leaderboard={leaderboard} />
@@ -35,9 +43,17 @@ function HomePage() {
       <div className="section">
         <h2>Mängud</h2>
 
-        {matchesLoading && <p>Laen mänge...</p>}
+        {matchesLoading && (
+          <div className="status-box">
+            Laen mänge...
+          </div>
+        )}
 
-        {matchesError && <p>{matchesError}</p>}
+        {matchesError && (
+          <div className="status-box error-box">
+            {matchesError}
+          </div>
+        )}
 
         {!matchesLoading && !matchesError && (
           <Matches matches={matches} />
