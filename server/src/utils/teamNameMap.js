@@ -1,10 +1,10 @@
 const teamNameMap = {
 
-  uru: "URY"
+  uru: "URY",
 
-  ita:"ITA"
+  ita:"ITA",
 
-  den:"DAN"
+  den:"DAN",
 
   bra: "BRA",
   brazil: "BRA",
