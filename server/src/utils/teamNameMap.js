@@ -1,4 +1,11 @@
 const teamNameMap = {
+
+  uru: "URY"
+
+  ita:"ITA"
+
+  den:"DAN"
+
   bra: "BRA",
   brazil: "BRA",
   brasiilia: "BRA",
