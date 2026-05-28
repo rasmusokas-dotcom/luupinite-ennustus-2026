@@ -9,6 +9,31 @@ function getStatusLabel(status) {
   return "TULEKUL"
 }
 
+function getStageLabel(stage) {
+  switch (stage) {
+    case "LAST_32":
+      return "1/16 finaal"
+
+    case "LAST_16":
+      return "1/8 finaal"
+
+    case "QUARTER_FINALS":
+      return "Veerandfinaal"
+
+    case "SEMI_FINALS":
+      return "Poolfinaal"
+
+    case "THIRD_PLACE":
+      return "3. koha mäng"
+
+    case "FINAL":
+      return "Finaal"
+
+    default:
+      return null
+  }
+}
+
 function sortMatches(matches) {
   const statusOrder = {
     LIVE: 0,
@@ -63,6 +88,11 @@ function Matches({ matches }) {
           <div className="match-date">
             {formatDate(match.utcDate)}
           </div>
+          {getStageLabel(match.stage) && (
+            <div className="match-stage">
+              {getStageLabel(match.stage)}
+            </div>
+          )}
 
           <div className="match-score">
             {match.homeScore ?? "-"} :{" "}
