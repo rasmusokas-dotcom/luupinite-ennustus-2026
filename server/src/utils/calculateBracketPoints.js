@@ -1,4 +1,7 @@
 function countMatches(predictedTeams, actualTeams, pointsPerTeam) {
+  if (!Array.isArray(predictedTeams)) return 0
+  if (!Array.isArray(actualTeams)) return 0
+
   return predictedTeams.filter(team =>
     actualTeams.includes(team)
   ).length * pointsPerTeam
@@ -10,31 +13,31 @@ function calculateBracketPoints(prediction, actualBracket) {
   points += countMatches(
     prediction.roundOf32,
     actualBracket.roundOf32,
-    2
+    1
   )
 
   points += countMatches(
     prediction.roundOf16,
     actualBracket.roundOf16,
-    4
+    2
   )
 
   points += countMatches(
     prediction.quarterFinals,
     actualBracket.quarterFinals,
-    6
+    3
   )
 
   points += countMatches(
     prediction.semiFinals,
     actualBracket.semiFinals,
-    8
+    4
   )
 
   points += countMatches(
     prediction.finalists,
     actualBracket.finalists,
-    10
+    5
   )
 
   if (prediction.thirdPlace === actualBracket.thirdPlace) {
@@ -42,7 +45,7 @@ function calculateBracketPoints(prediction, actualBracket) {
   }
 
   if (prediction.winner === actualBracket.winner) {
-    points += 15
+    points += 10
   }
 
   return points

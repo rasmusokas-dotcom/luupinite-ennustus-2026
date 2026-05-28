@@ -4,6 +4,7 @@ import readPredictionFiles from "../utils/readPredictionFiles.js"
 import getWorldCupMatches from "../api/footballApi.js"
 import calculateBracketPoints from "../utils/calculateBracketPoints.js"
 import buildActualBracket from "../utils/buildActualBracket.js"
+import buildBracketDetails from "../utils/buildBracketDetails.js"
 const router = express.Router()
 
 router.get("/:name", async (req, res) => {
@@ -11,6 +12,7 @@ router.get("/:name", async (req, res) => {
         const users = readPredictionFiles()
         const matches = await getWorldCupMatches()
         const actualBracket = buildActualBracket(matches)
+
         const user = users.find(user =>
             user.userName.toLowerCase() === req.params.name.toLowerCase()
         )
@@ -20,6 +22,11 @@ router.get("/:name", async (req, res) => {
                 message: "Kasutajat ei leitud"
             })
         }
+
+        const bracketDetails = buildBracketDetails(
+            user.bracketPredictions,
+            actualBracket
+        )
 
         const matchDetails = user.matchPredictions.map(prediction => {
             const match = matches.find(match =>
@@ -67,6 +74,7 @@ router.get("/:name", async (req, res) => {
         )
         res.json({
             name: user.userName,
+            bracketDetails,
             matchPoints,
             bracketPoints,
             points: matchPoints + bracketPoints,

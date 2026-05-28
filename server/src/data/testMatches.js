@@ -23,10 +23,28 @@ const testMatches = [
     {
         id: 900001,
         stage: "LAST_32",
+        homeTeam: "URY",
+        awayTeam: "NED",
+        homeScore: 2,
+        awayScore: 4,
+        status: "FINISHED"
+    },
+    {
+        id: 900001,
+        stage: "LAST_32",
         homeTeam: "BRA",
         awayTeam: "USA",
         homeScore: 2,
         awayScore: 0,
+        status: "FINISHED"
+    },
+    {
+        id: 900001,
+        stage: "LAST_32",
+        homeTeam: "ARG",
+        awayTeam: "CRO",
+        homeScore: 2,
+        awayScore: 4,
         status: "FINISHED"
     },
     {
@@ -43,9 +61,7 @@ const testMatches = [
         stage: "QUARTER_FINALS",
         homeTeam: "BRA",
         awayTeam: "FRA",
-        homeScore: 2,
-        awayScore: 1,
-        status: "FINISHED"
+        status: "SCHEDULED"
     },
     {
         id: 900004,

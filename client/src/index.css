@@ -400,3 +400,16 @@ h3 {
 .match-prediction-pill strong {
   color: #172033;
 }
+
+.prediction-summary {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.prediction-summary strong {
+  display: block;
+  margin-bottom: 8px;
+}

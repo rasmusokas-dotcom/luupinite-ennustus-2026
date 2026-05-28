@@ -68,10 +68,35 @@ function Matches({ matches }) {
             {match.homeScore ?? "-"} :{" "}
             {match.awayScore ?? "-"}
           </div>
+          {match.predictionSummary && (
+            <div className="prediction-summary">
+              <strong>Edasi ennustatud</strong>
 
-          {match.predictions?.length > 0 && (
+              {match.predictionSummary.homeSupporters.length > 0 && (
+                <div>
+                  {getTeamName(match.homeTeam)} →{" "}
+                  {match.predictionSummary.homeSupporters.join(", ")}
+                </div>
+              )}
+
+              {match.predictionSummary.awaySupporters.length > 0 && (
+                <div>
+                  {getTeamName(match.awayTeam)} →{" "}
+                  {match.predictionSummary.awaySupporters.join(", ")}
+                </div>
+              )}
+
+              {match.predictionSummary.bothSupporters.length > 0 && (
+                <div>
+                  Mõlemad →{" "}
+                  {match.predictionSummary.bothSupporters.join(", ")}
+                </div>
+              )}
+            </div>
+          )}
+          {match.scorePredictions?.length > 0 && (
             <div className="match-predictions">
-              {match.predictions.map(prediction => (
+              {match.scorePredictions.map(prediction => (
                 <div
                   key={prediction.userName}
                   className="match-prediction-pill"
